@@ -1,0 +1,142 @@
+{
+  "excavator": [
+    {
+      "id": 16769,
+      "startDate": "2022-02-10",
+      "location": "Site A",
+      "monday": "Excavator 1",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "Excavator 1",
+      "friday": "",
+      "saturday": "",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
+    },
+    {
+      "id": 22855,
+      "startDate": "2022-02-10",
+      "location": "Site B",
+      "monday": "",
+      "tuesday": "Excavator 4",
+      "wednesday": "",
+      "thursday": "Excavator 4",
+      "friday": "",
+      "saturday": "",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
+    },
+    {
+      "id": 18597,
+      "startDate": "2022-02-21",
+      "location": "Site C",
+      "monday": "Excavator 2",
+      "tuesday": "",
+      "wednesday": "Excavator 3",
+      "thursday": "",
+      "friday": "Excavator 3",
+      "saturday": "",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
+    },
+    {
+      "id": 12756,
+      "startDate": "2022-02-12",
+      "location": "Site D",
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "Excavator 5",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
+    }
+  ],
+  "working": [
+    {
+      "id": 23901,
+      "startDate": "2022-02-14",
+      "day": "Monday",
+      "excavator1": "Site A",
+      "excavator2": "",
+      "excavator3": "",
+      "excavator4": "",
+      "excavator5": ""
+    },
+    {
+      "id": 23959,
+      "startDate": "2022-02-15",
+      "day": "Tuesday",
+      "excavator1": "",
+      "excavator2": "Site B",
+      "excavator3": "",
+      "excavator4": "Site B",
+      "excavator5": ""
+    },
+    {
+      "id": 22625,
+      "startDate": "2022-02-16",
+      "day": "Wednesday",
+      "excavator1": "",
+      "excavator2": "",
+      "excavator3": "Site C",
+      "excavator4": "",
+      "excavator5": ""
+    },
+    {
+      "id": 27315,
+      "startDate": "2022-02-17",
+      "day": "Thursday",
+      "excavator1": "Site A",
+      "excavator2": "",
+      "excavator3": "",
+      "excavator4": "Site B",
+      "excavator5": ""
+    },
+    {
+      "id": 15549,
+      "startDate": "2022-02-18",
+      "day": "Friday",
+      "excavator1": "",
+      "excavator2": "",
+      "excavator3": "Site C",
+      "excavator4": "",
+      "excavator5": ""
+    },
+    {
+      "id": 20790,
+      "startDate": "2022-02-19",
+      "day": "Saturday",
+      "excavator1": "",
+      "excavator2": "",
+      "excavator3": "",
+      "excavator4": "",
+      "excavator5": "Site D"
+    }
+  ]
+}

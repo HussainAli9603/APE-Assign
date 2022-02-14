@@ -1,57 +1,12 @@
-APE Assigment
-This project has been generated using the ExpressJs and json file
-
-Using NPM
-
-axios
-body-parser
-express
-json-server
-moment
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:8089](http://localhost:8089) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-Project structure
-.
-├── node_module
-│      
-├── routes
-│   ├── main.js                 # Add  and Assign Excavator source code
-|
-└── views                       # Design template shared code
-│       └── Site.html           # Assign work
-│       └── View_all.html       # Show All Booking Excavator
-│
-├── package.json                # Include all project Details
-├── data.json                   # Booking and Add Excavator data store in Json Data file
-├── package-lock.json           
-├── Procfile                    # Its use for online deploy
-└── server.js                   # main page of all project
-
-Server Page
-
 /*
 * 'require' is similar to import used in Java and Python. It brings in the libraries required to be used
 * in this JS file.
 * */
-
-
 const PORT = process.env.PORT || 8080;
 const express = require("express");
 const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-
 
 /*
 * Loads routes file main.js in routes directory. The main.js determines which function
@@ -59,15 +14,10 @@ const ejs = require('ejs');
 */
 const mainRoute = require('./routes/main');
 
-
-
 /*
 * Creates an Express server - Express is a web application framework for creating web applications
 * in Node JS.
 */
-
-
-
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -80,12 +30,9 @@ const middlewares = jsonServer.defaults(app)
 server1.use(middlewares)
 server1.use(router)
 
-
 // Body parser middleware to parse HTTP body in order to read HTTP data
 app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 // set up body parsing in express  to be able  to get parse JSON posts
-
-
 app.use(
   bodyParser.urlencoded({
     limit: "50mb",
@@ -154,6 +101,5 @@ server.listen(PORT, () => {
   console.log("Node server is running... :", PORT);
 });
 server1.listen("3003", () => {
-  console.log("Server Json is Listening on port :", "3003");
+  // console.log("Server Json is Listening on port :", "3003");
 });
-

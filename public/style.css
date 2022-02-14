@@ -1,0 +1,84 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #ffffff;
+    background-image: url(img/Background\ Image.jpg);
+    background-size: cover;
+}
+
+.wrap{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+header{
+    background-color: white;
+    height: 125.2px;
+    text-align: center;
+}
+
+nav{
+    background-color: rgba(128, 128, 128, 0.308);
+    height: 40px;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+main{
+    background-color: white;
+    height: 600px;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+h1{
+    font-size: 42px;
+    color: Red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer p{
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+label {
+    text-align: left;
+}
+
+#calendar {
+    height: 720px;
+    width: 100%;
+    position: relative;
+}

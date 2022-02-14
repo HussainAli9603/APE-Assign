@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content = "">
+  <title>APE Assignment</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content = "this is the APE assignment for excavator rental">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #494646;
+  color: white;
+}
+
+#customers tr:nth-child(even){background-color: #eee0e0;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+nav a{
+  background-color: #050505;
+  color: #ddd;
+}
+</style>
+<body>
+
+    <div class="wrap">
+        <header>
+            <img src="/img/Company Logo.PNG" alt="Logo for company site.">
+        </header>
+    
+        <nav>
+            <a href="/view-all">SCHEDULE</a>
+            <a href="Site.html">ROSTERING</a>
+            <a href="/">BOOKING</a>
+            <a href="#">CONTACT US</a>
+        </nav>
+        
+       <!-- ----------------------------Table ---------------------- -->
+       <h2 style="color: white;">Excavaltor Table</h2>
+
+       <table id="customers" style="width: 120px;">
+         <tr>
+           <th>Date</th>
+         </tr>
+         <% monthsDates.forEach(function(data){ %>
+         <tr>
+          <td><%= data %></td>
+         </tr>
+         <% }) %>
+       
+       </table>
+       <table id="customers" style="margin-top: -1081px;margin-left: 120px;">
+        <tr>
+         <th>Day</th>
+         <th>Excavaltor 1</th>
+         <th>Excavaltor 2</th>
+         <th>Excavaltor 3</th>
+         <th>Excavaltor 4</th>
+         <th>Excavaltor 5</th>
+       </tr>
+        <% allExcavaltor.forEach(function(data){ %>
+        <tr>
+          <td><%= data.day.toLocaleString('en-US', { weekday: 'short' })%> </td>
+          <td><%= data.excavator1 %></td>
+          <td><%= data.excavator2 %></td>
+          <td><%= data.excavator3 %></td>
+          <td><%= data.excavator4 %></td>
+          <td><%= data.excavator5 %></td>
+        </tr>
+        <% }) %>
+      
+      </table>
+       
+
+       <!-- ----------------------------Table ---------------------- -->
+    <br><br>
+    <br><br>
+    <br><br>
+       
+        <!-- ----------------------------Table ---------------------- -->
+        <form action="/week" method="post" style="margin-top: 722px;">
+          <input type="date" name="searchWeek" class=""required>
+          <input type="submit" class="">
+        </form>
+        <h2 style="color: white;">Week Excavaltor Table</h2>
+        
+        <table id="customers">
+          <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+          <% staDate.forEach(function(data){ %>
+          <tr>
+            <td><%= data.location %></td>
+            <td><%= data.monday %></td>
+            <td><%= data.tuesday %></td>
+            <td><%= data.wednesday %></td>
+            <td><%= data.thursday %></td>
+            <td><%= data.friday %></td>
+            <td><%= data.saturday %></td>
+            <td><%= data.sunday %></td>
+          </tr>
+          <% }) %>
+        
+        </table>
+
+
+
+        <!-- ----------------------------Table ---------------------- -->
+
+
+        <footer>
+            <p>Tampines, Singapore, Excavator Rental - Copyright 2022</p>
+        </footer>
+    
+    </div>
+    <script src="/script.js"></script>
+    <script src="/server.js"></script>
+</body>
+</html>
+
+
+
+

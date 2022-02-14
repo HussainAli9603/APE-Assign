@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content = "">
+    <title>APE Assignment</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="description" content = "this is the APE assignment for excavator rental">
+</head>
+<style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+<body>
+
+    <div class="wrap">
+        <header>
+            <img src="/img/Company Logo.PNG" alt="Logo for company site.">
+        </header>
+    
+        <nav>
+            <a href="/view-all">SCHEDULE</a>
+            <!-- <a href="/add-excavator">ADD EXCAVATOR</a> -->
+            <a href="Site.html">ROSTERING</a>
+            <a href="/">BOOKING</a>
+            <a href="#">CONTACT US</a>
+        </nav>
+        
+        <main>
+            <h1>Schedule new Equipment here!</h1>
+            <p>Register the excavator, the site your wish to deploy, and schedule will be booked for you</p>
+            <h2>Please fill up below</h2>
+            
+            <!-- --------------------------------------------- -->
+            <div>
+                <form action="/add-booking" method="post">
+                  <label for="fname">First Name</label>
+                  <select name="fullName" id="fname">
+                    <option value="Excavator 1">Excavator 1</option>
+                    <option value="Excavator 2">Excavator 2</option>
+                    <option value="Excavator 3">Excavator 3</option>
+                    <option value="Excavator 4">Excavator 4</option>
+                    <option value="Excavator 5">Excavator 5</option>
+                  </select>
+              
+                  <label for="lname">Excavator Model Name</label>
+                  <input type="text" name="excavatorModelName" id="lname" placeholder="Excavator Model" required>
+              
+                  <label for="country">Location</label>
+                  <select name="location" id="country">
+                    <option value="Site A">Site A</option>
+                    <option value="Site B">Site B</option>
+                    <option value="Site C">Site C</option>
+                    <option value="Site D">Site D</option>
+                  </select>
+
+                  <label for="lname">Start Date</label>
+                  <input type="date" name="startDate" id="lname" placeholder="Start Date" required>
+                  
+                  <label for="lname">End Date</label>
+                  <input type="date" name="endDate" class="form-control"required>
+                
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
+            <!-- --------------------------------------------- -->
+          
+        </main>
+    
+        <footer>
+            <p>Tampines, Singapore, Excavator Rental - Copyright 2022</p>
+        </footer>
+    
+    </div>
+    <script src="/script.js"></script>
+    <script src="/server.js"></script>
+</body>
+</html>
+
+<!-- 
+<form action="/add-booking" method="post" id="myForm" class="form">
+    <!-- This is to take Name from Form 
+    <div class="form-group row">
+        <label>
+            Name
+        </label>
+        <select name="fullName" id="location">
+            <option value="Excavator 1">Excavator 1</option>
+            <option value="Excavator 2">Excavator 2</option>
+            <option value="Excavator 3">Excavator 3</option>
+            <option value="Excavator 4">Excavator 4</option>
+            <option value="Excavator 5">Excavator 5</option>
+          </select>
+        <br>
+     
+    <!-- This is to take Excavator Model Name from Form 
+    <div class="form-group row">
+        <label>
+            Excavator Model Name
+        </label>
+        <div>
+            <input type="text" name="excavatorModelName" class="form-control" placeholder="Excavator Model" required>
+        </div>
+        <br>  
+        
+    <!-- This is to take Name of Site from Form 
+    <div class="form-group row">
+        <label>
+            Location
+        </label>
+        <div>
+            <select name="location" id="location">
+                <option value="Site A">Site A</option>
+                <option value="Site B">Site B</option>
+                <option value="Site C">Site C</option>
+                <option value="Site D">Site D</option>
+              </select>
+        </div>
+        <br>
+
+    <!-- This is to take Start Date from Form 
+    <div class="form-group row">
+        <label>
+            Start Date
+        </label>
+        <div>
+            <input type="date" name="startDate" class="form-control"required>
+        </div>
+        <br>
+
+    <!-- This is to take End Date from Form
+    <div class="form-group row">
+        <label>
+            End Date
+        </label>
+        <div>
+            <input type="date" name="endDate" class="form-control"required>
+        </div>
+        <br>                   
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+    <br><br>  
+    </div>
+</div>
+</form> -->
