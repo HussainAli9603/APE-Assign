@@ -48,6 +48,7 @@ router.post('/add-booking',async (req,res)=>{
             
             if(stDatee.length != 0){  // its means the data is not zero
               alert(`Already Booked the ${fullName} in this date!`);
+		    res.json({Message:`Already Booked the ${fullName} in this date!`})
             	res.redirect('/')   // redirect to this link http://localhost:8089
             
             }else{
