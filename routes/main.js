@@ -44,8 +44,11 @@ router.post('/add-booking',async (req,res)=>{
 
          // filter all excavator data find the fullname and startData presend in excavator
          const stDatee = await Excavator.excavator.filter(x => 
-         x.fullName === req.body.fullName && x.startDate === req.body.startDate);
-         
+         x.monday === req.body.fullName || x.tuesday === req.body.fullName ||
+         x.wednesday === req.body.fullName || x.thursday === req.body.fullName ||
+         x.friday === req.body.fullName || x.saturday === req.body.fullName ||
+         x.sunday === req.body.fullName  );
+            
             if(stDatee.length != 0){  // its means the data is not zero
               alert(`Already Booked the ${fullName} in this date!`);
             	res.redirect('/')   // redirect to this link http://localhost:8089
@@ -65,6 +68,7 @@ router.post('/add-booking',async (req,res)=>{
               var excavator3;
               var excavator4;
               var excavator5;
+              var excavator6;
 
                // fullName is equal to Excavator 1 to 5 save location excavator
                if(fullName == "Excavator 1"){
@@ -92,6 +96,11 @@ router.post('/add-booking',async (req,res)=>{
                 }else{
                   excavator5 = staDate[i].excavator5
                 }
+                if(fullName == "Excavator 6"){
+                  excavator6 = req.body.location
+                }else{
+                  excavator6 = staDate[i].excavator6
+                }
                   
 
                   var dd = saves.push({
@@ -102,7 +111,8 @@ router.post('/add-booking',async (req,res)=>{
                       excavator2:excavator2, 
                       excavator3:excavator3, 
                       excavator4:excavator4, 
-                      excavator5:excavator5 
+                      excavator5:excavator5, 
+                      excavator6:excavator6 
                     })
 
                      // Create new Device Object
@@ -114,7 +124,8 @@ router.post('/add-booking',async (req,res)=>{
                       excavator2:excavator2, 
                       excavator3:excavator3, 
                       excavator4:excavator4, 
-                      excavator5:excavator5 
+                      excavator5:excavator5, 
+                      excavator6:excavator6 
                     }
                  
                   await axios.put("http://localhost:3003/working/"+id,ddd)  // save to this id 
@@ -127,6 +138,7 @@ router.post('/add-booking',async (req,res)=>{
               var excavator3;
               var excavator4;
               var excavator5;
+              var excavator6;
 
                if(fullName == "Excavator 1"){
                   excavator1 = req.body.location
@@ -153,6 +165,11 @@ router.post('/add-booking',async (req,res)=>{
                 }else{
                   excavator5 = ""
                 }
+                if(fullName == "Excavator 6"){
+                  excavator6 = req.body.location
+                }else{
+                  excavator6 = ""
+                }
                // Create new Device Object
               var dddd = {
                 id:id,
@@ -162,7 +179,8 @@ router.post('/add-booking',async (req,res)=>{
                 excavator2:excavator2, 
                 excavator3:excavator3, 
                 excavator4:excavator4, 
-                excavator5:excavator5 
+                excavator5:excavator5, 
+                excavator6:excavator6 
               }
             const newVehicle = await axios.post("http://localhost:3003/working",dddd);  //save new object
               res.redirect('/')   // redirect to this link http://localhost:8089
@@ -375,21 +393,31 @@ const staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
     var pushData = allExcavaltor.data[i];
         allData.push(pushData)
    }
-        var monthsDates= []; 
-          for (var i = 1; i <= 22; i++) {
+        
+       var monthsDates= []; 
+       var monthsDates1= []; 
+          for (var i = 1; i <= 28; i++) {
             var d = new Date(moment().day(i));
             var mm = d.getMonth() + 1;
             var dd = d.getDate();
             var yy = d.getFullYear();
             var myDateString = yy + '-' + mm + '-' + dd; //(US)
-             
+            if(mm == 1){
+            var newDate = "2022"+"-"+"03"+"-"+[i];
+            console.log("sssssssssssssssss",newDate)
+            monthsDates1.push(newDate);
+            }else{
+            var newDate = "2022"+"-"+"02"+"-"+[i];
+            console.log("ssssssssssssss",newDate)
+            monthsDates1.push(newDate);
+            }
             monthsDates.push(myDateString); 
           }
    
   res.render('View_all.html',{
     allExcavaltor:allExcavaltor.data,  // passes Device object to html
     staDate:staDate,                   // passes Device object to html
-    monthsDates:monthsDates            // passes Device object to html  
+    monthsDates:monthsDates1            // passes Device object to html  
   })
 
 })
@@ -408,16 +436,26 @@ router.post('/week',async (req,res)=>{
     }
   })
 
-  var monthsDates= []; 
+       var monthsDates= []; 
+       var monthsDates1= []; 
           for (var i = 1; i <= 28; i++) {
             var d = new Date(moment().day(i));
             var mm = d.getMonth() + 1;
             var dd = d.getDate();
             var yy = d.getFullYear();
             var myDateString = yy + '-' + mm + '-' + dd; //(US)
-             
+            if(mm == 1){
+            var newDate = "2022"+"-"+"03"+"-"+[i];
+            console.log("sssssssssssssssss",newDate)
+            monthsDates1.push(newDate);
+            }else{
+            var newDate = "2022"+"-"+"02"+"-"+[i];
+            console.log("ssssssssssssss",newDate)
+            monthsDates1.push(newDate);
+            }
             monthsDates.push(myDateString); 
           }
+          // console.log(monthsDates)
    
  
   var weekDates= []; 
@@ -447,7 +485,7 @@ router.post('/week',async (req,res)=>{
   res.render('add_excavaltor.html',{
     allExcavaltor:allExcavaltor.data,
     staDate:staDate,
-    monthsDates:monthsDates
+    monthsDates:monthsDates1
   })
 
 })
