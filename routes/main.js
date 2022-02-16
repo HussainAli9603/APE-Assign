@@ -44,10 +44,7 @@ router.post('/add-booking',async (req,res)=>{
 
          // filter all excavator data find the fullname and startData presend in excavator
          const stDatee = await Excavator.excavator.filter(x => 
-         x.monday === req.body.fullName || x.tuesday === req.body.fullName ||
-         x.wednesday === req.body.fullName || x.thursday === req.body.fullName ||
-         x.friday === req.body.fullName || x.saturday === req.body.fullName ||
-         x.sunday === req.body.fullName  );
+         x.startDate === req.body.startDate);
             
             if(stDatee.length != 0){  // its means the data is not zero
               alert(`Already Booked the ${fullName} in this date!`);
