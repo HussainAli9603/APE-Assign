@@ -17,7 +17,6 @@ router.post('/add-booking',async (req,res)=>{
 	       let idGen = await Math.floor(11000 + Math.random() * 19000);
          var id = idGen;
          var fullName = req.body.fullName;
-         var excavatorModelName = req.body.excavatorModelName;
          var location = req.body.location;
          var startDate = req.body.startDate;
          var endDate = req.body.endDate;
@@ -38,20 +37,21 @@ router.post('/add-booking',async (req,res)=>{
             weekDates.push(myDateString); // push data above array
           }
         
-           
          const fName = await Excavator.excavator.filter(x => x.fullName === req.body.fullName);
          const stDate = await Excavator.excavator.filter(x => x.startDate === req.body.startDate);
 
-         // filter all excavator data find the fullname and startData presend in excavator
-         const stDatee = await Excavator.excavator.filter(x => 
-         x.startDate === req.body.startDate);
-            
-            if(stDatee.length != 0){  // its means the data is not zero
-              alert(`Already Booked the ${fullName} in this date!`);
-		    res.json({Message:`Already Booked the ${fullName} in this date!`})
-            	res.redirect('/')   // redirect to this link http://localhost:8089
-            
-            }else{
+        
+        //  // filter all excavator data find the fullname and startData presend in excavator
+        //  const stDatee = await Excavator.excavator.filter(x => 
+        //   x.startDate === req.body.startDate);
+             
+        //      if(stDatee.length != 0){  // its means the data is not zero
+        //        alert(`Already Booked the ${fullName} in this date!`);
+        // //  res.json({Message:`Already Booked the ${fullName} in this date!`})
+        //        res.redirect('/')   // redirect to this link http://localhost:8089
+             
+            //  }else{
+           
       const staDate = await Excavator.working.filter(x => x.startDate === req.body.startDate);
          if (staDate.length != 0) {
           var data = { all: [] }
@@ -184,6 +184,7 @@ router.post('/add-booking',async (req,res)=>{
               res.redirect('/')   // redirect to this link http://localhost:8089
              }
       const weekDate = await Excavator.excavator.filter(x => x.location === req.body.location || x.A === req.body.startDate || x.B === req.body.startDate || x.C === req.body.startDate || x.D === req.body.startDate || x.E === req.body.startDate || x.F === req.body.startDate || x.G === req.body.startDate);
+        
       if (weekDate.length != 0) {
             var data = { all: [] }
             var saves = []
@@ -354,8 +355,12 @@ router.post('/add-booking',async (req,res)=>{
               
             }
           // res.redirect('/')
-    }
-  }catch(err){ console.log(err)}
+    
+  
+  
+  
+        // } 
+           }catch(err){ console.log(err)}
 })
 
 router.get('/view-all',async (req,res)=>{
@@ -385,7 +390,7 @@ router.get('/view-all',async (req,res)=>{
           }
           console.log(weekDates[0])
 
-var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);     
+   var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);     
      console.log(staDate)
    for(var i = 0; i < allExcavaltor.data.length; i++){
     var pushData = allExcavaltor.data[i];
@@ -402,11 +407,9 @@ var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
             var myDateString = yy + '-' + mm + '-' + dd; //(US)
             if(mm == 1){
             var newDate = "2022"+"-"+"03"+"-"+[i];
-            console.log("sssssssssssssssss",newDate)
             monthsDates1.push(newDate);
             }else{
             var newDate = "2022"+"-"+"02"+"-"+[i];
-            console.log("ssssssssssssss",newDate)
             monthsDates1.push(newDate);
             }
             monthsDates.push(myDateString); 
@@ -444,11 +447,9 @@ router.post('/week',async (req,res)=>{
             var myDateString = yy + '-' + mm + '-' + dd; //(US)
             if(mm == 1){
             var newDate = "2022"+"-"+"03"+"-"+[i];
-            console.log("sssssssssssssssss",newDate)
             monthsDates1.push(newDate);
             }else{
             var newDate = "2022"+"-"+"02"+"-"+[i];
-            console.log("ssssssssssssss",newDate)
             monthsDates1.push(newDate);
             }
             monthsDates.push(myDateString); 
@@ -472,8 +473,7 @@ router.post('/week',async (req,res)=>{
        }
 
   var weekData = [];
-  var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
-    console.log(staDate)
+  const staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
    for(var j = 0; j < staDate.length; j++){
     var weekData = staDate[j];
     if(weekData.A === req.body.searchWeek){
