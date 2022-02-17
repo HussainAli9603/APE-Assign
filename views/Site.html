@@ -66,6 +66,7 @@
                 <form action="/add-booking" method="post">
                   <label for="fname">First Name</label>
                   <select name="fullName" id="fname">
+                    <option value="">--Choose One--</option>
                     <option value="Excavator 1">Excavator 1</option>
                     <option value="Excavator 2">Excavator 2</option>
                     <option value="Excavator 3">Excavator 3</option>
@@ -74,11 +75,9 @@
                     <option value="Excavator 6">Excavator 6</option>
                   </select>
               
-                  <label for="lname">Excavator Model Name</label>
-                  <input type="text" name="excavatorModelName" id="lname" placeholder="Excavator Model" required>
-              
                   <label for="country">Location</label>
                   <select name="location" id="country">
+                    <option value="">--Choose One--</option>
                     <option value="Site A">Site A</option>
                     <option value="Site B">Site B</option>
                     <option value="Site C">Site C</option>
