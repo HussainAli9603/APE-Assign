@@ -75,6 +75,44 @@
       "E": "2022-2-18",
       "F": "2022-2-19",
       "G": "2022-2-20"
+    },
+    {
+      "id": 27634,
+      "startDate": "2022-02-18",
+      "location": "Site E",
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "Excavator 1",
+      "saturday": "",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
+    },
+    {
+      "id": 19702,
+      "startDate": "2022-02-19",
+      "location": "Site F",
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "Excavator 6",
+      "sunday": "",
+      "A": "2022-2-14",
+      "B": "2022-2-15",
+      "C": "2022-2-16",
+      "D": "2022-2-17",
+      "E": "2022-2-18",
+      "F": "2022-2-19",
+      "G": "2022-2-20"
     }
   ],
   "working": [
@@ -168,7 +206,7 @@
     },
     {
       "id": 226275,
-      "startDate": "2022-02-10",
+      "startDate": "2022-02-9",
       "day": "Wednesday",
       "excavator1": "",
       "excavator2": "",
@@ -179,7 +217,7 @@
     },
     {
       "id": 273115,
-      "startDate": "2022-02-11",
+      "startDate": "2022-02-10",
       "day": "Thursday",
       "excavator1": "",
       "excavator2": "",
@@ -190,7 +228,7 @@
     },
     {
       "id": 1554239,
-      "startDate": "2022-02-12",
+      "startDate": "2022-02-11",
       "day": "Friday",
       "excavator1": "",
       "excavator2": "",
@@ -201,7 +239,7 @@
     },
     {
       "id": 2079032,
-      "startDate": "2022-02-13",
+      "startDate": "2022-02-12",
       "day": "Saturday",
       "excavator1": "",
       "excavator2": "",
@@ -211,8 +249,8 @@
       "excavator6": ""
     },
     {
-      "id": 207903222,
-      "startDate": "2022-02-113",
+      "id": 207933032,
+      "startDate": "2022-02-13",
       "day": "Sunday",
       "excavator1": "",
       "excavator2": "",
@@ -269,7 +307,7 @@
       "id": 1554945,
       "startDate": "2022-02-18",
       "day": "Friday",
-      "excavator1": "",
+      "excavator1": "Site E",
       "excavator2": "",
       "excavator3": "Site C",
       "excavator4": "",
@@ -285,7 +323,7 @@
       "excavator3": "",
       "excavator4": "",
       "excavator5": "Site D",
-      "excavator6": ""
+      "excavator6": "Site F"
     }
   ]
 }
