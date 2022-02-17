@@ -385,7 +385,7 @@ router.get('/view-all',async (req,res)=>{
           }
           console.log(weekDates[0])
 
-const staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);     
+var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);     
      console.log(staDate)
    for(var i = 0; i < allExcavaltor.data.length; i++){
     var pushData = allExcavaltor.data[i];
@@ -472,7 +472,7 @@ router.post('/week',async (req,res)=>{
        }
 
   var weekData = [];
-  const staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
+  var staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
     console.log(staDate)
    for(var j = 0; j < staDate.length; j++){
     var weekData = staDate[j];
