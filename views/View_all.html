@@ -15,6 +15,9 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  height: 200%;
+  background-color: black;
+  
 }
 
 #customers td, #customers th {
@@ -40,7 +43,8 @@ nav a{
   color: #ddd;
 }
 </style>
-<body>
+
+<body">
 
     <div class="wrap">
         <header>
@@ -55,9 +59,10 @@ nav a{
         </nav>
         
        <!-- ----------------------------Table ---------------------- -->
+      
        <h2 style="color: white;">Excavator Table</h2>
-
-       <table id="customers" style="width: 120px;">
+    
+       <table id="customers" style="width: 120px; ">
          <tr>
            <th>Date</th>
          </tr>
@@ -68,7 +73,9 @@ nav a{
          <% }) %>
        
        </table>
-       <table id="customers" style="margin-top: -1081px;margin-left: 120px;">
+       
+       
+       <table id="customers" style="margin-top: -1086px;margin-left: 120px; background-color: black;height: 100px;">
         <tr>
          <th>Day</th>
          <th>Excavaltor 1</th>
@@ -78,6 +85,7 @@ nav a{
          <th>Excavaltor 5</th>
          <th>Excavaltor 6</th>
        </tr>
+       <div style="background-color: #494646;margin-left: 120px; height: 744px; margin-top:-740px ; width: 1025px;"></div>
         <% allExcavaltor.forEach(function(data){ %>
         <tr>
           <td><%= data.day.toLocaleString('en-US', { weekday: 'short' })%> </td>
@@ -89,17 +97,16 @@ nav a{
           <td><%= data.excavator6 %></td>
         </tr>
         <% }) %>
-      
+      </div>
       </table>
        
-
        <!-- ----------------------------Table ---------------------- -->
     <br><br>
     <br><br>
     <br><br>
        
         <!-- ----------------------------Table ---------------------- -->
-        <form action="/week" method="post" style="margin-top: 322px;">
+        <form action="/week" method="post" style="margin-top: 302px;">
           <input type="date" name="searchWeek" class=""required>
           <input type="submit" class="">
         </form>
