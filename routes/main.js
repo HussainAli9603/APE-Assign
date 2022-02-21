@@ -424,6 +424,10 @@ router.get('/view-all',async (req,res)=>{
 })
 
 router.post('/week',async (req,res)=>{
+
+var  staDate = await Excavator.excavator.filter(x => x.A === req.body.searchWeek || x.B === req.body.searchWeek || x.C === req.body.searchWeek || x.D === req.body.searchWeek || x.E === req.body.searchWeek || x.F === req.body.searchWeek || x.G === req.body.searchWeek);
+
+
   var allData = [];
   var allExcavaltor = await axios.get("http://localhost:3003/working",{
    params: {
@@ -457,29 +461,6 @@ router.post('/week',async (req,res)=>{
           // console.log(monthsDates)
    
  
-  var weekDates= []; 
-      for (var i = 1; i <= 7; i++) {
-        var d = new Date(moment().day(i));
-        var mm = d.getMonth() + 1;
-        var dd = d.getDate();
-        var yy = d.getFullYear();
-        var myDateString = yy + '-' + mm + '-' + dd; //(US)
-          
-        weekDates.push(myDateString); 
-      }
-      for(var i = 0; i < allExcavaltor.data.length; i++){
-        var pushData = allExcavaltor.data[i];
-            allData.push(pushData)
-       }
-
-  var weekData = [];
-  const staDate = await Excavator.excavator.filter(x => x.A === weekDates[0]);
-   for(var j = 0; j < staDate.length; j++){
-    var weekData = staDate[j];
-    if(weekData.A === req.body.searchWeek){
-        allData.push(weekData)
-    }
-  }
   res.render('add_excavaltor.html',{
     allExcavaltor:allExcavaltor.data,
     staDate:staDate,
